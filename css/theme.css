@@ -1,0 +1,210 @@
+
+Conversation opened. 3 messages. 1 message unread.
+
+Skip to content
+Using Gmail with screen readers
+Rachel
+ 
+ 
+More 
+1 of 8,420
+ 
+...
+Inbox
+    x
+王观明     11:51 AM (1 hour ago)
+https://github.com/CSE512-15S/a3-jinasuh-fintzij-amitmeir
+王观明     Attachments12:10 PM (57 minutes ago)
+-- Guanming Wang Department of Statistics University of Washington
+王观明
+    
+Attachments1:07 PM (0 minutes ago)
+        
+to me
+2 Attachments
+    
+Click here to Reply or Forward
+3.24 GB (21%) of 15 GB used
+Manage
+Terms - Privacy
+Last account activity: 0 minutes ago
+Open in 1 other location  Details
+    
+    
+王观明's profile photo
+    王观明
+Show details
+
+/*
+ * Base structure
+ */
+html {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+body {
+    font-family: 'Open Sans', 'Segoe UI', Helvetica, Verdana, Arial, sans-serif;
+    font-weight: 300;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #eee;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+    body > .container {
+        overflow-y: auto;
+        overflow-x: auto; 
+        height: 691px;
+        width: 100%;
+        padding: 0px;
+        margin-top: 50px;
+    }
+
+/*
+ * Top navigation
+ */
+
+.navbar {
+    color: white;
+    margin-bottom: 0px;
+}
+
+    .navbar .navbar-brand {
+        font-size: 20px;
+        padding-top: 15px;
+        padding-left: 15px;
+        color: white;
+    }
+
+.navbar-fixed-top {
+    border: 0px;
+}
+
+    .navbar-fixed-top .container{
+        margin: 0px;
+    }
+
+/*
+ * Main content
+ */
+
+
+/*
+ * Side Bar (Botton)
+ */
+
+.sidebar {
+    float: left;
+    width: 180px;
+    height: 671px;
+    overflow-x: auto;
+    overflow-y: auto;
+    position: absolute;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: #eee;
+    font-size: 15px;
+    color: black;
+}
+
+/*
+ * Main (Mountain)
+ */
+
+.main {
+    float: left;
+    width:  1225px;
+    height: 480px;
+    overflow-x: auto;
+    overflow-y: auto;
+    position: absolute;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    margin-left: 200px;
+    margin-top: 10px;  
+    background-color: grey /*#eee*/;
+}
+
+/*    .main > .left {
+        width: 33%;
+        height: 100%;
+        position: absolute;
+        background-color: red;
+    }
+
+    .main > .middle {
+        width: 33%;
+        height: 100%;
+        position: absolute;
+        margin-left: 33.5%; 
+        background-color: blue;
+    }
+
+    .main > .right {
+        width: 33%;
+        height: 100%;
+        position: absolute;
+        margin-left: 67%; 
+        background-color: green;
+    }*/
+
+/*
+ * Timeline (Histogram)
+ */
+
+.timeline {
+    float: left;
+    width: 1225px;
+    height: 181px;
+    overflow-x: auto;
+    overflow-y: auto;
+    position: absolute;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    margin-left: 200px;
+    margin-top: 500px;  
+    background-color: red /*#eee*/;
+}
+
+/*    .timeline > .left {
+        width: 33%;
+        height: 100%;
+        position: absolute;
+        background-color: red;
+    }
+
+    .timeline > .middle {
+        width: 33%;
+        height: 100%;
+        position: absolute;
+        margin-left: 33.5%; 
+        background-color: blue;
+    }
+
+    .timeline > .right {
+        width: 33%;
+        height: 100%;
+        position: absolute;
+        margin-left: 67%; 
+        background-color: green;
+    }
+*/
+
+
+
+
+theme.css
+Displaying theme.css.
