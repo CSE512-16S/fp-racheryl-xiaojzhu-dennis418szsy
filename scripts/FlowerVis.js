@@ -1,10 +1,11 @@
 
 //for each frame of animation, we can update currentDay, then call loadData(callback);
-var currentDay = 260;
-loadData(callback);   
-
-
-
+var currentDay = 199;
+var playing = false;
+var g_siteData;
+var g_Fposition;
+var g_day;
+loadData(main); 
 
 
 
@@ -180,7 +181,9 @@ function getTime(){
   return currentDay;
 }
 
+
 //load data 
+
 function loadData(callback) {
   d3.csv("data/siteData.csv", function(siteData) {
     d3.csv("data/Fposition.csv", function(Fposition) {
@@ -190,13 +193,44 @@ function loadData(callback) {
 }
 
 //define callback function
-function callback(siteData,Fposition){
+function main(siteData,Fposition){
   //add some filters here based on clicked button 
   //then pass filtrated data to the drawFlower function
   //filter//
-  drawFlower(siteData,Fposition,getTime());
+  
+  g_siteData = siteData;
+  g_Fposition = Fposition;
+  g_day_first = 180;
+  g_day_last = 200;
+  g_day = g_day_first;
 
-  //Rachel can add the histgram drawing function here 
+  //initial image -- load data, ready the page, etc
+  drawFlower(siteData, Fposition, g_day);
+
+  //animate
+  var timer
+  d3.select('#play')
+    .on('click', function(){
+      if(playing == false){
+        d3.select(this).html('stop');
+        timer = setInterval(function(){
+          console.log(g_day);
+          if (g_day > g_day_last)
+            g_day = g_day_first;
+          else
+            g_day++;
+          drawFlower(g_siteData, g_Fposition, g_day);
+        }, 1000)
+
+        playing = true;
+      }else{
+        d3.select(this).html('play');
+        clearInterval(timer);
+        playing = false;
+      }
+    })
+
+  //Rachel can add the histgram drawing function here
   //eg. drawHist(siteData,Fposition,getTime())
 }
 

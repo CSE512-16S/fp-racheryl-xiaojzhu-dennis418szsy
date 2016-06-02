@@ -28,7 +28,7 @@ function drawCircles(){
 			.attr("height", 10000);;
 
 	var circles = svg.selectAll("circle")
-		.data(dataset)
+		.data(dataset)`		`	
 		.enter()
 		.append("circle");
 
