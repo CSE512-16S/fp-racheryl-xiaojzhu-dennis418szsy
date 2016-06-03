@@ -1,0 +1,287 @@
+/*
+ * Base structure
+ */
+
+html {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+body {
+    font-family: 'Open Sans', 'Segoe UI', Helvetica, Verdana, Arial, sans-serif;
+    font-weight: 300;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #eee;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+    body > .container {
+        overflow-y: auto;
+        overflow-x: auto; 
+    	height: 691px;
+    	width: 100%;
+        padding: 0px;
+        margin-top: 50px;
+    }
+
+/*
+ * Top navigation
+ */
+
+.navbar {
+    color: white;
+    margin-bottom: 0px;
+}
+
+    .navbar .navbar-brand {
+        font-size: 20px;
+        padding-top: 15px;
+        padding-left: 15px;
+        color: white;
+    }
+
+.navbar-fixed-top {
+    border: 0px;
+}
+
+	.navbar-fixed-top .container{
+		margin: 0px;
+	}
+
+/*
+ * Main content
+ */
+
+
+/*
+ * Side Bar (Botton)
+ */
+
+.sidebar {
+    float: left;
+    width: 180px;
+    height: 671px;
+    overflow-x: auto;
+    overflow-y: auto;
+    position: absolute;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: white;
+    font-size: 15px;
+    color: black;
+}
+
+button {
+    width: 48.5%;
+    font-weight: bold;
+    color: black;
+}
+
+
+p.Controller {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+
+p.Flowers {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+
+p.Phenology {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+
+p.showDate {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    font-size: 30px;
+}
+
+p.showJulianDay {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+}
+
+button.POBI {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(31,119,180);
+}
+
+button.ERMO {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(255,127,14);
+}
+
+button.PEBR {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(44,160,44);
+}
+
+button.LIGR {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(214,39,40);
+}
+
+button.CAPA {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(148,103,189);
+}
+
+button.ERPE {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(140,86,75);
+}
+
+button.MIAL {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(227,119,194);
+}
+
+button.VASI {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(127,127,127);
+}
+
+button.LUAR {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(188,189,34);
+}
+
+button.ANOC {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(23,190,207);
+}
+
+
+/*
+ * Main (Mountain)
+ */
+
+.main {
+    float: left;
+    width: 1225px;
+    height: 480px;
+    overflow-x: auto;
+    overflow-y: auto;
+    position: absolute;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    margin-left: 200px;
+    margin-top: 10px;  
+    background-color: white;
+}
+
+	.main > .left {
+		width: 33%;
+		height: 100%;
+		position: absolute;
+		background-color: red;
+	}
+
+	.main > .middle {
+		width: 33%;
+		height: 100%;
+		position: absolute;
+		margin-left: 33.5%; 
+		background-color: blue;
+	}
+
+	.main > .right {
+		width: 33%;
+		height: 100%;
+		position: absolute;
+		margin-left: 67%; 
+		background-color: green;
+	}
+
+/*
+ * Timeline (Histogram)
+ */
+
+.timeline {
+    float: left;
+    width: 1225px;
+    height: 181px;
+    overflow-x: auto;
+    overflow-y: auto;
+    position: absolute;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    margin-left: 200px;
+    margin-top: 500px;  
+    background-color: white;
+}
+
+	.timeline > .left {
+		width: 33%;
+		height: 100%;
+		position: absolute;
+		background-color: white;
+	}
+
+	.timeline > .middle {
+		width: 33%;
+		height: 100%;
+		position: absolute;
+		margin-left: 33.5%; 
+		background-color: white;
+	}
+
+	.timeline > .right {
+		width: 33%;
+		height: 100%;
+		position: absolute;
+		margin-left: 67%; 
+		background-color: white;
+	}
+
+
+
+
+
