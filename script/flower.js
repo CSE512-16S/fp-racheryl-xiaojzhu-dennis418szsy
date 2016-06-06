@@ -34,7 +34,7 @@ function callback(){
   g_siteData = sharedData.s_siteData;
   g_Fposition = sharedData.s_Fposition;
   g_day_first = 127;
-  g_day_last = 315;
+  g_day_last = 365;
   g_day = g_day_first;
   document.getElementById("showDate").innerHTML = "Date: " + JulianDate[g_day];
   document.getElementById("showJulianDay").innerHTML = "Julian Day: " + g_day.toString();

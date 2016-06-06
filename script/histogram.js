@@ -201,7 +201,7 @@ var stackedBarChart = function(year, current){
 						return "Snow Covered";
 					}
 					if (d == "Melt"){
-						return "Snow Disappear";
+						return "Snow Disappeared";
 					}
 				});
 		});
