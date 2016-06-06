@@ -206,6 +206,31 @@ function drawFlower(siteData,Fposition,time) {
   _ctx.fillText("Elevation",_xScale.round(3+80+3),_yScale.round(3+48));
   _ctx.fillText("Elevation",_xScale.round(3+80+80+6),_yScale.round(3+48));
 
+  //arrows 
+  _ctx.beginPath();
+  //1
+  _ctx.moveTo(_xScale.round(10),_yScale.round(50));
+  _ctx.lineTo(_xScale.round(10),_yScale.round(53));
+  _ctx.moveTo(_xScale.round(9),_yScale.round(52));
+  _ctx.lineTo(_xScale.round(10),_yScale.round(53));
+  _ctx.moveTo(_xScale.round(11),_yScale.round(52));
+  _ctx.lineTo(_xScale.round(10),_yScale.round(53));
+    //2
+  _ctx.moveTo(_xScale.round(10+83),_yScale.round(50));
+  _ctx.lineTo(_xScale.round(10+83),_yScale.round(53));
+  _ctx.moveTo(_xScale.round(9+83),_yScale.round(52));
+  _ctx.lineTo(_xScale.round(10+83),_yScale.round(53));
+  _ctx.moveTo(_xScale.round(11+83),_yScale.round(52));
+  _ctx.lineTo(_xScale.round(10+83),_yScale.round(53));
+    //3
+  _ctx.moveTo(_xScale.round(10+83+83),_yScale.round(50));
+  _ctx.lineTo(_xScale.round(10+83+83),_yScale.round(53));
+  _ctx.moveTo(_xScale.round(9+83+83),_yScale.round(52));
+  _ctx.lineTo(_xScale.round(10+83+83),_yScale.round(53));
+  _ctx.moveTo(_xScale.round(11+83+83),_yScale.round(52));
+  _ctx.lineTo(_xScale.round(10+83+83),_yScale.round(53));
+  _ctx.stroke();
+
 
   //elevations
   _ctx.font = "bold 10px Arial";
