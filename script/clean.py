@@ -3,6 +3,7 @@ Clean Data
 """
 import pandas as pd
 import numpy as np
+import datetime
 
 def createJulianDate():
 	start = datetime.date(2001, 1, 1)
@@ -11,7 +12,7 @@ def createJulianDate():
 	counter = 1
 	result = {}
 	while start <= end:
-		result[counter]= str(start.month) + '/' + str(start.day)
+		result[str(start.month) + '/' + str(start.day)] = counter
 		start += delta
 		counter += 1
 	return result
@@ -164,13 +165,86 @@ if __name__ == "__main__":
 	snow2014 = pd.merge(dateSite2014, snow2014, on = ['Year', 'JulianDay', 'Site'], how = 'left')
 	snow2015 = pd.merge(dateSite2015, snow2015, on = ['Year', 'JulianDay', 'Site'], how = 'left')
 
+	snow2013.set_value(175, 'Snow', 0)
+	snow2013.set_value(540, 'Snow', 0)
+	snow2013.set_value(905, 'Snow', 0)
+	snow2013.set_value(1270, 'Snow', 0)
+	snow2013.set_value(1635, 'Snow', 0)
+	snow2013.set_value(2000, 'Snow', 0)
+	snow2013.set_value(2365, 'Snow', 0)
+	snow2013.set_value(2730, 'Snow', 0)
+	snow2013.set_value(3095, 'Snow', 0)
+
+	snow2013.set_value(304, 'Snow', 0)
+	snow2013.set_value(669, 'Snow', 0)
+	snow2013.set_value(1034, 'Snow', 0)
+	snow2013.set_value(1399, 'Snow', 0)
+	snow2013.set_value(1764, 'Snow', 0)
+	snow2013.set_value(2129, 'Snow', 0)
+	snow2013.set_value(2494, 'Snow', 0)
+	snow2013.set_value(2859, 'Snow', 0)
+	snow2013.set_value(3224, 'Snow', 0)
+
+	snow2014.set_value(180, 'Snow', 0)
+	snow2014.set_value(545, 'Snow', 0)
+	snow2014.set_value(910, 'Snow', 0)
+	snow2014.set_value(1275, 'Snow', 0)
+	snow2014.set_value(1640, 'Snow', 0)
+	snow2014.set_value(2005, 'Snow', 0)
+	snow2014.set_value(2370, 'Snow', 0)
+	snow2014.set_value(2735, 'Snow', 0)
+	snow2014.set_value(3100, 'Snow', 0)
+
+	snow2014.set_value(310, 'Snow', 0)
+	snow2014.set_value(675, 'Snow', 0)
+	snow2014.set_value(1040, 'Snow', 0)
+	snow2014.set_value(1405, 'Snow', 0)
+	snow2014.set_value(1770, 'Snow', 0)
+	snow2014.set_value(2135, 'Snow', 0)
+	snow2014.set_value(2500, 'Snow', 0)
+	snow2014.set_value(2865, 'Snow', 0)
+	snow2014.set_value(3230, 'Snow', 0)
+
+	snow2015.set_value(127, 'Snow', 0)
+	snow2015.set_value(492, 'Snow', 0)
+	snow2015.set_value(857, 'Snow', 0)
+	snow2015.set_value(1222, 'Snow', 0)
+	snow2015.set_value(1587, 'Snow', 0)
+	snow2015.set_value(1952, 'Snow', 0)
+	snow2015.set_value(2317, 'Snow', 0)
+	snow2015.set_value(2682, 'Snow', 0)
+	snow2015.set_value(3047, 'Snow', 0)
+
+	snow2015.set_value(303, 'Snow', 0)
+	snow2015.set_value(668, 'Snow', 0)
+	snow2015.set_value(1033, 'Snow', 0)
+	snow2015.set_value(1398, 'Snow', 0)
+	snow2015.set_value(1763, 'Snow', 0)
+	snow2015.set_value(2128, 'Snow', 0)
+	snow2015.set_value(2493, 'Snow', 0)
+	snow2015.set_value(2858, 'Snow', 0)
+	snow2015.set_value(3223, 'Snow', 0)
+
+
 	snow2013 = fillInSnow(snow2013)
 	snow2014 = fillInSnow(snow2014)
 	snow2015 = fillInSnow(snow2015)
 
-	snow2013 = pd.DataFrame(snow2013, columns = ['JulianDay', 'Site', 'Snow'])
-	snow2014 = pd.DataFrame(snow2014, columns = ['JulianDay', 'Site', 'Snow'])
-	snow2015 = pd.DataFrame(snow2015, columns = ['JulianDay', 'Site', 'Snow'])
+	snow2013 = pd.DataFrame(snow2013, columns = ['JulianDay', 'Snow'])
+	snow2014 = pd.DataFrame(snow2014, columns = ['JulianDay', 'Snow'])
+	snow2015 = pd.DataFrame(snow2015, columns = ['JulianDay', 'Snow'])
+
+	snow2013 = snow2013.groupby(['JulianDay'], as_index = False).min()
+	snow2014 = snow2014.groupby(['JulianDay'], as_index = False).min()
+	snow2015 = snow2015.groupby(['JulianDay'], as_index = False).min()
+
+	snow2013.Snow = snow2013.Snow * 5
+	snow2014.Snow = snow2014.Snow * 5
+	snow2015.Snow = snow2015.Snow * 5
+
+	snow2013['Melt'] = 5 - snow2013.Snow
+	snow2014['Melt'] = 5 - snow2014.Snow
+	snow2015['Melt'] = 5 - snow2015.Snow
 
 	snow2013.to_csv('../data/snow2013.csv', header = True, index = False)
 	snow2014.to_csv('../data/snow2014.csv', header = True, index = False)
@@ -231,9 +305,9 @@ if __name__ == "__main__":
 	flowerPeak2014 = pd.DataFrame(flowerPeak2014, columns = ['JulianDay', 'ANOC', 'CAPA', 'ERMO', 'ERPE', 'LIGR', 'LUAR', 'MIAL', 'PEBR', 'POBI', 'VASI'])
 	flowerPeak2015 = pd.DataFrame(flowerPeak2015, columns = ['JulianDay', 'ANOC', 'CAPA', 'ERMO', 'ERPE', 'LIGR', 'LUAR', 'MIAL', 'PEBR', 'POBI', 'VASI'])
 
-	flowerPeak2013 = flowerPeak2013[flowerPeak2013.JulianDay<=320][flowerPeak2013.JulianDay>=150]
-	flowerPeak2014 = flowerPeak2014[flowerPeak2014.JulianDay<=320][flowerPeak2014.JulianDay>=150]
-	flowerPeak2015 = flowerPeak2015[flowerPeak2015.JulianDay<=320][flowerPeak2015.JulianDay>=150]
+	flowerPeak2013 = pd.merge(snow2013, flowerPeak2013, on = 'JulianDay', how = 'left')
+	flowerPeak2014 = pd.merge(snow2014, flowerPeak2014, on = 'JulianDay', how = 'left')
+	flowerPeak2015 = pd.merge(snow2015, flowerPeak2015, on = 'JulianDay', how = 'left')
 
 	flowerPeak2013.to_csv('../data/flowerPeak2013.csv', header = True, index = False)
 	flowerPeak2014.to_csv('../data/flowerPeak2014.csv', header = True, index = False)

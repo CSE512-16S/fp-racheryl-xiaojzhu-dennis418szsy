@@ -64,19 +64,23 @@ function callback(){
 
           if (g_day < g_day_last){
             g_day++;
-            drawFlower(g_siteData, g_Fposition, g_day);        
+            drawFlower(g_siteData, g_Fposition, g_day);  
+            document.getElementById("showDate").innerHTML = "Date: " + JulianDate[g_day];
+            document.getElementById("showJulianDay").innerHTML = "Julian Day: " + g_day.toString();
+            stackedBarChart(2013, g_day);
+            stackedBarChart(2014, g_day);
+            stackedBarChart(2015, g_day);      
           }else{
             clearInterval(timer);
             drawFlower(g_siteData, g_Fposition,g_day_last);
-            
+            d3.select("#play").html('Play');
+            document.getElementById("showDate").innerHTML = "Date: " + JulianDate[g_day];
+            document.getElementById("showJulianDay").innerHTML = "Julian Day: " + g_day.toString();
+            stackedBarChart(2013, g_day);
+            stackedBarChart(2014, g_day);
+            stackedBarChart(2015, g_day);
+            playing = false;
           }
-          
-
-          document.getElementById("showDate").innerHTML = "Date: " + JulianDate[g_day];
-          document.getElementById("showJulianDay").innerHTML = "Julian Day: " + g_day.toString();
-          stackedBarChart(2013, g_day);
-          stackedBarChart(2014, g_day);
-          stackedBarChart(2015, g_day);
           //histOne.plot(current)
           //histTwo.plot(current)
           //histThree.plot(current)
@@ -194,15 +198,22 @@ function drawFlower(siteData,Fposition,time) {
   //year
   _ctx.font = "bold 20px Arial";
   _ctx.fillText("2013",_xScale.round(40),_yScale.round(3+48));
-  _ctx.fillText("2014",_xScale.round(40+80),_yScale.round(3+48));
-  _ctx.fillText("2015",_xScale.round(40+80+80),_yScale.round(3+48));
+  _ctx.fillText("2014",_xScale.round(40+80+3),_yScale.round(3+48));
+  _ctx.fillText("2015",_xScale.round(40+80+80+6),_yScale.round(3+48));
+
+  _ctx.font = "bold 10px Arial";
+  _ctx.fillText("Elevation",_xScale.round(3),_yScale.round(3+48));
+  _ctx.fillText("Elevation",_xScale.round(3+80+3),_yScale.round(3+48));
+  _ctx.fillText("Elevation",_xScale.round(3+80+80+6),_yScale.round(3+48));
+
+
   //elevations
-  _ctx.font = "bold 8px Arial";
+  _ctx.font = "bold 10px Arial";
   var elevations = [1490, 1540, 1600, 1650, 1680, 1745, 1805, 1840, 1880];
   for (var i = 0; i < elevations.length; i++){
-    _ctx.fillText(String(elevations[i])+"m",_xScale.round(4.5),_yScale.round(7+5*i));
-    _ctx.fillText(String(elevations[i])+"m",_xScale.round(4.5+80),_yScale.round(7+5*i));
-    _ctx.fillText(String(elevations[i])+"m",_xScale.round(4.5+80+80),_yScale.round(7+5*i));
+    _ctx.fillText(String(elevations[i])+"m",_xScale.round(3.5),_yScale.round(7+5*i));
+    _ctx.fillText(String(elevations[i])+"m",_xScale.round(3.5+80+3),_yScale.round(7+5*i));
+    _ctx.fillText(String(elevations[i])+"m",_xScale.round(3.5+80+80+6),_yScale.round(7+5*i));
   }
 
 
@@ -227,7 +238,11 @@ function drawFlower(siteData,Fposition,time) {
   var species=["POBI","ERMO","PEBR","LIGR","CAPA","ERPE",
         "MIAL","VASI","LUAR","ANOC"];
 
-  var FlowerColorScale = d3.scale.category10()
+  // var FlowerColorScale = d3.scale.category10()
+  //               .domain(species);
+
+  var FlowerColorScale = d3.scale.ordinal()
+                .range(["#1f77b4","#FFFF00"/*"#bcbd22"*/,"#8c564b","#7f7f7f","#d62728","#e377c2","#ff7f0e","#c49c94","#9467bd","#2ca02c"])
                 .domain(species);
 
   //draw the flowers 
@@ -270,7 +285,12 @@ function drawFlower(siteData,Fposition,time) {
   function drawsnow(x,y,t1,t2,time){
     if(time<t2 && time>t1){
     //_ctx.lineWidth = 2;
-    _ctx.fillStyle = "#40B8FE";
+    //_ctx.fillStyle = " #ffd966";
+    var my_gradient = _ctx.createLinearGradient(x, y, x, y+( _yScale.round(0)-_yScale.round(5)));
+    my_gradient.addColorStop(0, "rgb(34,139,34)");
+    my_gradient.addColorStop(1, "white");
+    _ctx.fillStyle = my_gradient;
+
     _ctx.fillRect(x,y, _xScale.round(70)-_xScale.round(0), _yScale.round(0)-_yScale.round(5));
 
     _ctx.strokeStyle = "black";
@@ -279,7 +299,13 @@ function drawFlower(siteData,Fposition,time) {
 
     else{
     //_ctx.lineWidth = 2;
-    _ctx.fillStyle = "white";
+    //_ctx.fillStyle = "white";
+    //_ctx.fillStyle = " #ffd966";
+    var my_gradient = _ctx.createLinearGradient(x, y, x, y+( _yScale.round(0)-_yScale.round(5)));
+    my_gradient.addColorStop(0, "rgb(64,160,254)");
+    my_gradient.addColorStop(1, "white");
+    _ctx.fillStyle = my_gradient;
+
     _ctx.fillRect(x,y, _xScale.round(70)-_xScale.round(0), _yScale.round(0)-_yScale.round(5));
 
     _ctx.strokeStyle = "black";

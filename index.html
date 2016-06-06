@@ -19,17 +19,21 @@
 	<script src="library/bootstrap/js/bootstrap.min.js"></script>
 </head>
 
-<body ng-app="App" ng-controller="Main as main">
+<body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="#">Impacts of Climate Change on Peak Wildflowers</a>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
+				<li><a href="http://www.meadowatch.org/">MeadoWatch</a></li>
+				<li><a href="" data-toggle="modal" data-target="#wiki">Wiki</a></li>
 			</ul>
 		</div>
 		</div>
@@ -40,7 +44,6 @@
 			<p class="showDate" id = "showDate"></p>
 			<p class="showJulianDay" id = "showJulianDay"></p>
 
-
 			<!--div id="bottons">
 				<p class="Phenology">Phenology</p>
 					<button class="selectFlower">Flower</button>
@@ -48,10 +51,9 @@
 					<button class="selectSeed">Seed</button>
 					<button class="selectFruit">Fruit</button>
 			</div-->
-
-
+            <hr>
 			<div id="bottons">
-				<p class="Flowers">Flower</p>
+				<p class="Flowers">Flower Filter</p>
 					<button class="POBI">POBI</button>
 					<button class="ERMO">ERMO</button>
 					<button class="PEBR">PEBR</button>
@@ -63,15 +65,46 @@
 					<button class="LUAR">LUAR</button>
 					<button class="ANOC">ANOC</button>
 			</div>
-
-
-
+            <hr>
+			<div id="bottons">
+				<p class="Info">Information</p>
+				<button class="flowerInfo" data-toggle="modal" data-target="#flowerInfo">
+					<span>Flower</span>
+				</button>
+				<button class="locationInfo" data-toggle="modal" data-target="#locationInfo">
+					<span>Site</span>
+				</button>
+			</div>
+            <hr>
 
 			<div id="bottons">
 				<p class="Controller">Controller</p>
 					<button class="controlPlayPause" id = "play">Play</button>
 					<button class="controlReset" id = "reset">Reset</button>
+                    <label class="goto">GoTo Julian Day (1 ~ 365):</label><input id="goto" type ="text"/><br/>
 			</div>
+
+			<div id="slider"></div>
+            <hr>
+			<div id="translate">
+				<p class="Converter">Time Converter</p>
+				<label>Julian Day (1~365):</label><input id="JulianToDate" type ="text"/><br/>
+				<label id="ShowJulianToDate"></label>
+				<label>Date (1~12/1~31):</label><input id="DateToJulian" type ="text"/><br/>
+				<label id="ShowDateToJulian"></label>
+			</div>
+            <hr>
+
+			<!--div id ="guide">
+				<p class="guide">
+					<br><b>-Select Flower Species</b>
+                    <br><b>-Check Information</b>
+					<br><b>-Use Time Controller</b>
+                    <br><b>-Go To Julian Day</b>
+					<br><b>-Julian Day to Date Converter</b>
+					<br><b>-Date to Julian Day Converter</b>
+				</p>
+			</div-->
 
 		</div>
 
@@ -97,6 +130,164 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="modal fade" id="flowerInfo">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Flower Gallery</h4>
+                </div>
+
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                	
+                	<ol class="carousel-indicators">
+                		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                		<li data-target="#myCarousel" data-slide-to="1"></li>
+                		<li data-target="#myCarousel" data-slide-to="2"></li>
+                		<li data-target="#myCarousel" data-slide-to="3"></li>
+                		<li data-target="#myCarousel" data-slide-to="4"></li>
+                		<li data-target="#myCarousel" data-slide-to="5"></li>
+                		<li data-target="#myCarousel" data-slide-to="6"></li>
+                		<li data-target="#myCarousel" data-slide-to="7"></li>
+                		<li data-target="#myCarousel" data-slide-to="8"></li>
+                		<li data-target="#myCarousel" data-slide-to="9"></li>
+                	</ol>
+
+                
+                	<div class="carousel-inner" role="listbox">
+                		<div class="item active">
+                			<img src="picture/americanbistort.png" alt="americanbistort" align="middle">
+                			<div class="carousel-caption">
+                				<h3>American Bistort</h3>
+                				<h3>POBI</h3>
+                			</div>
+                		</div>
+                		<div class="item">
+                			<img src="picture/avalanchelily.png" alt="avalanchelily" align="middle">
+                			<div class="carousel-caption">
+                				<h3>Avalanche Lily</h3>
+                				<h3>ERMO</h3>
+                			</div>
+                		</div>
+                		<div class="item">
+                			<img src="picture/bractedlousewort.png" alt="bractedlousewort" align="middle">
+                			<div class="carousel-caption">
+                				<h3>Bracted Lousewort</h3>
+                				<h3>PEBR</h3>
+                			</div>
+                		</div>
+                		<div class="item">
+                			<img src="picture/graylovage.png" alt="graylovage" align="middle">
+                			<div class="carousel-caption">
+                				<h3>Grays Lovage</h3>
+                				<h3>LIGR</h3>
+                			</div>
+                		</div>
+                		<div class="item">
+                			<img src="picture/magentapaintbrush.png" alt="magentapaintbrush" align="middle">
+                			<div class="carousel-caption">
+                				<h3>Magenta Paintbrush</h3>
+                				<h3>CAPA</h3>
+                			</div>
+                		</div>
+                		<div class="item">
+                			<img src="picture/mountaindaisy.png" alt="mountaindaisy" align="middle">
+                			<div class="carousel-caption">
+                				<h3>Mountain Daisy</h3>
+                				<h3>ERPE</h3>
+                			</div>
+                		</div>
+                		<div class="item">
+                			<img src="picture/northmicroseris.png" alt="northmicroseris" align="middle">
+                			<div class="carousel-caption">
+                				<h3>North Microseris</h3>
+                				<h3>MIAL</h3>
+                			</div>
+                		</div>
+                		<div class="item">
+                			<img src="picture/sitkavalerian.png" alt="sitkavalerian" align="middle">
+                			<div class="carousel-caption">
+                				<h3>Sitka Valerian</h3>
+                				<h3>VASI</h3>
+                			</div>
+                		</div>
+                		<div class="item">
+                			<img src="picture/subalpinelupine.png" alt="subalpinelupine" align="middle">
+                			<div class="carousel-caption">
+                				<h3>Subalpine Lupine</h3>
+                				<h3>LUAR</h3>
+                			</div>
+                		</div>
+                		<div class="item">
+                			<img src="picture/westernanemone.png" alt="westernanemone" align="middle">
+                			<div class="carousel-caption">
+                				<h3>Western Anemone</h3>
+                				<h3>ANOC</h3>
+                			</div>
+                		</div>
+                	</div>
+
+                	
+                	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                		<span class="sr-only">Previous</span>
+                	</a>
+                	<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                		<span class="sr-only">Next</span>
+                	</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<div class="modal fade" id="locationInfo">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Site Information</h4>
+                </div>
+
+                <div class="description">
+                	<p class="Location">Site 1: 46.771 Latitude, 121.723 Longitude, 1490 m Altitude</p>
+                	<p class="Location">Site 2: 46.773 Latitude, 121.723 Longitude, 1540 m Altitude</p>
+                	<p class="Location">Site 3: 46.775 Latitude, 121.720 Longitude, 1600 m Altitude</p>
+                	<p class="Location">Site 4: 46.778 Latitude, 121.722 Longitude, 1650 m Altitude</p>
+                	<p class="Location">Site 5: 46.782 Latitude, 121.720 Longitude, 1680 m Altitude</p>
+                	<p class="Location">Site 6: 46.787 Latitude, 121.719 Longitude, 1745 m Altitude</p>
+                	<p class="Location">Site 7: 46.792 Latitude, 121.717 Longitude, 1805 m Altitude</p>
+                	<p class="Location">Site 8: 46.794 Latitude, 121.716 Longitude, 1840 m Altitude</p>
+                	<p class="Location">Site 9: 46.797 Latitude, 121.712 Longitude, 1880 m Altitude</p>
+                </div>
+
+                <div class="map">
+                    <img src="picture/map.png" style="width:400px;height:400px;">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+	<div class="modal fade" id="wiki">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Wiki</h4>
+                </div>
+
+                <div class="wiki">
+                	<p class="wiki">
+                		The seasonal progression of flowering for ten wildflower species at Mt. Rainier National Park in three years experiencing different climates. Each panel represents a year, with each band in the top panel representing one of the nine plots in which MeadoWatch volunteers documented wildflowers blooming. Different colored dots (top panel) and shades in histograms (bottom panel) represent one of the ten focal species monitored. As time progresses when you hit play, bands turn from light blue to dark green when snow melts from plots, dots turn colored when flowers are observed in plots, and the heights of the bars in the histogram (bottom panel) document the total number of wildflower species observed flowering (i.e. the wildflower season). Note that 2015 in was the earliest snowmelt year on record at Mt. Rainier National Park (analogous to climates expected in 2080), by contrast to 2013 and 2014, which experienced average snow amounts and meltout dates.
+                	</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
 	<!--script-->

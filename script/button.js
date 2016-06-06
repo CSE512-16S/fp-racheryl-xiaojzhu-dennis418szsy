@@ -1,4 +1,4 @@
-var flower = {POBI: 1, ERMO: 1, PEBR: 1, LIGR: 1, CAPA: 1, ERPE: 1, MIAL: 1, VASI: 1, LUAR: 1, ANOC: 1}
+var flower = {Snow: 1, Melt: 1, POBI: 1, ERMO: 1, PEBR: 1, LIGR: 1, CAPA: 1, ERPE: 1, MIAL: 1, VASI: 1, LUAR: 1, ANOC: 1}
 var playing = false;
 var g_day;
 
@@ -8,7 +8,7 @@ $("button.POBI").on("click", function() {
 		flower.POBI = 0
 	}
 	else if (flower.POBI == 0) {
-		$(this).css("background-color", "rgb(31,119,180)");
+		$(this).css("background-color", "#1f77b4");
 		flower.POBI = 1
 	}
 	if (playing == false){
@@ -30,7 +30,7 @@ $("button.ERMO").on("click", function() {
 		flower.ERMO = 0
 	}
 	else if (flower.ERMO == 0) {
-		$(this).css("background-color", "rgb(255,127,14)");
+		$(this).css("background-color", "#FFFF00");
 		flower.ERMO = 1
 	}
 	if (playing == false){
@@ -52,7 +52,7 @@ $("button.PEBR").on("click", function() {
 		flower.PEBR = 0
 	}
 	else if (flower.PEBR == 0) {
-		$(this).css("background-color", "rgb(44,160,44)");
+		$(this).css("background-color", "#8c564b");
 		flower.PEBR = 1
 	}
 	if (playing == false){
@@ -61,11 +61,7 @@ $("button.PEBR").on("click", function() {
 		stackedBarChart(2013, g_day);
         stackedBarChart(2014, g_day);
         stackedBarChart(2015, g_day);
-        //histOne.plot(current)
-        //histTwo.plot(current)
-        //histThree.plot(current)
 	}
-	//console.log(getflowerType());
 });
 
 $("button.LIGR").on("click", function() {
@@ -74,7 +70,7 @@ $("button.LIGR").on("click", function() {
 		flower.LIGR = 0
 	}
 	else if (flower.LIGR == 0) {
-		$(this).css("background-color", "rgb(214,39,40)");
+		$(this).css("background-color", "#7f7f7f");
 		flower.LIGR = 1
 	}
 	if (playing == false){
@@ -96,7 +92,7 @@ $("button.CAPA").on("click", function() {
 		flower.CAPA = 0
 	}
 	else if (flower.CAPA == 0) {
-		$(this).css("background-color", "rgb(148,103,189)");
+		$(this).css("background-color", "#d62728");
 		flower.CAPA = 1
 	}
 	if (playing == false){
@@ -118,7 +114,7 @@ $("button.ERPE").on("click", function() {
 		flower.ERPE = 0
 	}
 	else if (flower.ERPE == 0) {
-		$(this).css("background-color", "rgb(140,86,75)");
+		$(this).css("background-color", "#e377c2");
 		flower.ERPE = 1
 	}
 	if (playing == false){
@@ -140,7 +136,7 @@ $("button.MIAL").on("click", function() {
 		flower.MIAL = 0
 	}
 	else if (flower.MIAL == 0) {
-		$(this).css("background-color", "rgb(227,119,194)");
+		$(this).css("background-color", "#ff7f0e");
 		flower.MIAL = 1
 	}
 	if (playing == false){
@@ -162,7 +158,7 @@ $("button.VASI").on("click", function() {
 		flower.VASI = 0
 	}
 	else if (flower.VASI == 0) {
-		$(this).css("background-color", "rgb(127,127,127)");
+		$(this).css("background-color", "#c49c94");
 		flower.VASI = 1
 	}
 	if (playing == false){
@@ -184,7 +180,7 @@ $("button.LUAR").on("click", function() {
 		flower.LUAR = 0
 	}
 	else if (flower.LUAR == 0) {
-		$(this).css("background-color", "rgb(188,189,34)");
+		$(this).css("background-color", "#9467bd");
 		flower.LUAR = 1
 	}
 	if (playing == false){
@@ -206,7 +202,7 @@ $("button.ANOC").on("click", function() {
 		flower.ANOC = 0
 	}
 	else if (flower.ANOC == 0) {
-		$(this).css("background-color", "rgb(23,190,207)");
+		$(this).css("background-color", "#2ca02c");
 		flower.ANOC = 1
 	}
 	if (playing == false){
