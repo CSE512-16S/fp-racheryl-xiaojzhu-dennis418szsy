@@ -2,9 +2,9 @@
 
 ## Team Members
 
-- Rachel Li
-- Xiaojing Zhu
-- Guanming Wang
+- Rachel Li  ryli@uw.edu
+- Xiaojing Zhu  xiaojzhu@uw.edu
+- Guanming Wang  guanmw@uw.edu
 
 ## Breakdown and Development Process
 Here is the breakdown:
