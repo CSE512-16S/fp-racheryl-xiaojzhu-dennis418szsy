@@ -1,0 +1,388 @@
+/*
+ * Base structure
+ */
+
+html {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+body {
+    font-family: 'Open Sans', 'Segoe UI', Helvetica, Verdana, Arial, sans-serif;
+    font-weight: 300;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #eee;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+    body > .container {
+        overflow-y: auto;
+        overflow-x: auto; 
+    	height: 691px;
+    	width: 100%;
+        padding: 0px;
+        margin-top: 50px;
+    }
+
+/*
+ * Top navigation
+ */
+
+.navbar {
+    color: white;
+    margin-bottom: 0px;
+}
+
+    .navbar .navbar-brand {
+        font-size: 20px;
+        padding-top: 15px;
+        padding-left: 15px;
+        color: white;
+    }
+
+.navbar-fixed-top {
+    border: 0px;
+}
+
+	.navbar-fixed-top .container{
+		margin: 0px;
+	}
+
+/*
+ * Main content
+ */
+
+
+/*
+ * Side Bar (Botton)
+ */
+
+.sidebar {
+    float: left;
+    width: 180px;
+    height: 671px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: absolute;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: white;
+    font-size: 15px;
+    color: black;
+}
+
+button {
+    width: 48.5%;
+    font-weight: bold;
+    color: black;
+    transition-duration: 1s;
+}
+
+
+p.Controller {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+
+p.Flowers {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+
+p.Phenology {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+
+p.showDate {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    font-size: 30px;
+}
+
+p.showJulianDay {
+    margin: 0px;
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+}
+
+p.Converter {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+
+p.Location {
+    padding-left: 10px;
+    margin: 0px;
+    font-weight: bold;
+    color: black;
+}
+
+p.wiki {
+    padding-left: 10px;
+    margin: 0px;
+    font-size: 20px;
+    color: black;
+}
+
+p.Flower {
+    padding-left: 10px;
+    margin: 0px;
+    font-weight: bold;
+    color: black;
+}
+
+p.Info {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+
+p.guide {
+    margin: 0px;
+    text-align: left;
+    color: black;
+    font-size: 12px;
+}
+
+
+button.POBI {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #1f77b4;
+}
+
+button.ERMO {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #FFFF00;
+}
+
+button.PEBR {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #8c564b;
+}
+
+button.LIGR {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #7f7f7f;
+}
+
+button.CAPA {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #d62728;
+}
+
+button.ERPE {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #e377c2;
+}
+
+button.MIAL {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #ff7f0e;
+}
+
+button.VASI {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #c49c94;
+}
+
+button.LUAR {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #9467bd;
+}
+
+button.ANOC {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #2ca02c;
+}
+
+button.close {
+    width: 3.5%;
+    color: white;
+    font-size: 30px;
+    text-align: right;
+}
+
+label.goto {
+    font-size: 12px;
+}
+
+hr {
+    margin: 1px;
+    color: black;
+    background-color: black;
+    height: 2px;
+}
+
+/*
+ * Main (Mountain)
+ */
+
+.main {
+    float: left;
+    width: 1225px;
+    height: 480px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: absolute;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    margin-left: 200px;
+    margin-top: 10px;  
+    background-color: white;
+}
+
+	.main > .left {
+		width: 33%;
+		height: 100%;
+		position: absolute;
+	}
+
+	.main > .middle {
+		width: 33%;
+		height: 100%;
+		position: absolute;
+		margin-left: 33.5%; 
+	}
+
+	.main > .right {
+		width: 33%;
+		height: 100%;
+		position: absolute;
+		margin-left: 67%; 
+	}
+
+/*
+ * Timeline (Histogram)
+ */
+
+.timeline {
+    float: left;
+    width: 1225px;
+    height: 181px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: absolute;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    margin-left: 200px;
+    margin-top: 500px;  
+    background-color: white;
+}
+
+	.timeline > .left {
+		width: 33%;
+		height: 100%;
+		position: absolute;
+		background-color: white;
+	}
+
+	.timeline > .middle {
+		width: 33%;
+		height: 100%;
+		position: absolute;
+		margin-left: 33.5%; 
+		background-color: white;
+	}
+
+	.timeline > .right {
+		width: 33%;
+		height: 100%;
+		position: absolute;
+		margin-left: 67%; 
+		background-color: white;
+	}
+
+
+.modal-header {
+    background: #333;
+    color: white;
+}
+
+    .modal-header > .modal-title {
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+.modal-body {
+    margin: 0;
+}
+
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+.carousel-caption {
+    color: white;
+}
+
+.modal-content {
+    height: 480px;
+    width: 800px;
+}
+
+.description {
+    width: 50%;
+    height: 50%;
+    margin: 0;
+    position: absolute;
+}
+
+.map {
+    width: 50%;
+    height: 50%;
+    margin-left: 50%;
+    position: absolute;
+}
+
+
+
+
+
